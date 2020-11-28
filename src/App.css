@@ -1,0 +1,164 @@
+.homeview {
+  display: block;
+  display: inline-flex;
+  margin-bottom: 0px;
+}
+.the-para {
+  height: 200px;
+  width: 500px;
+  display: block;
+  display: inline-flex;
+  margin-left: 390px;
+  margin-right: 150px;
+  margin-bottom: 0px;
+  margin-top: 60px;
+  text-align: center;
+  padding: 0px;
+  font-family: "Barlow", sans-serif;
+  color: rgb(11, 42, 100);
+}
+
+.image {
+  display: block;
+  display: inline-flex;
+  margin: 360px;
+  margin-bottom: 0px;
+  margin-top: 0%;
+  margin-left: 330px;
+  padding-top: 0px;
+  padding-left: 0px;
+}
+.thesearch {
+  position: relative;
+  left: 8%;
+  top: 130px;
+  margin-bottom: 0px;
+  display: inline-block;
+  display: inline-flex;
+  color: rgb(48, 201, 212);
+  padding: 0px;
+}
+
+.container {
+  display: inline-block;
+  width: 40rem;
+  align-content: center;
+  box-align: center;
+  margin: 0%;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(2, 42, 68);
+  padding: 0px;
+  border-radius: 5px;
+  position: relative;
+  left: 25%;
+}
+
+.wrapper {
+  display: inline-block;
+  align-self: auto;
+  margin: 6px;
+}
+.wrap {
+  position: absolute;
+  top: 0;
+}
+.form-control-lg {
+  width: 32rem;
+}
+
+.image2 {
+  margin-top: 50px;
+  margin-left: 560px;
+  padding: 0px;
+}
+.lyrics {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.bounce {
+  display: inline-block;
+  position: relative;
+  -moz-animation: bounce 0.5s infinite linear;
+  -o-animation: bounce 0.5s infinite linear;
+  -webkit-animation: bounce 0.5s infinite linear;
+  animation: bounce 0.5s infinite linear;
+  color: 000;
+}
+.fa-music {
+  color: rgb(48, 201, 212);
+  font-size: 30px;
+  margin: 0px;
+}
+@-webkit-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-moz-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-o-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-ms-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}

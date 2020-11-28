@@ -1,0 +1,2 @@
+for voice recognition i used https://codeburst.io/html5-speech-recognition-api-670846a50e92
+this site documentation
