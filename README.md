@@ -1,3 +1,7 @@
+## Opints to be noted 😋
+
+this aplication is only optimized for pc and some features doesn't work without googole chrome.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
