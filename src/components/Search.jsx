@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../src/App.css";
 import axios from "axios";
 import { Consumer } from "../Context";
+
 class Search extends Component {
   constructor() {
     super();
@@ -126,9 +127,12 @@ class Search extends Component {
             <React.Fragment>
               <div className="row">
                 <div className="wrapper ">
-                  <form onSubmit={this.findTrack.bind(this, dispatch)}>
+                  <form
+                    className="col-sm-12 col-md-10"
+                    onSubmit={this.findTrack.bind(this, dispatch)}
+                  >
                     <input
-                      className="form-control-lg col-8 "
+                      className="form-control col-md-8 col-sm-12 "
                       placeholder="Enter Title To search"
                       name="trackTitle"
                       id="input"

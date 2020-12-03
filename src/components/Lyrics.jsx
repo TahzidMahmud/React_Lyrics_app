@@ -3,32 +3,27 @@ import axios from "axios";
 import Spinner from "../components/layout/Spinner";
 import { Link } from "react-router-dom";
 import "../App.css";
-import Moment from "react-moment";
 
 class Lyrics extends Component {
   state = {
     track: {},
-    Lyrics: {}
+    Lyrics: {},
   };
   componentDidMount() {
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${
-          this.props.match.params.id
-        }&apikey=${process.env.REACT_APP_MM_KEY}`
+        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`
       )
-      .then(res => {
+      .then((res) => {
         this.setState({ Lyrics: res.data.message.body.lyrics });
         return axios.get(
-          `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${
-            this.props.match.params.id
-          }&apikey=${process.env.REACT_APP_MM_KEY}`
+          `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`
         );
       })
-      .then(res => {
+      .then((res) => {
         this.setState({ track: res.data.message.body.track });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }
   render() {
     const { track, Lyrics } = this.state;

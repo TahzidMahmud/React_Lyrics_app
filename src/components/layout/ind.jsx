@@ -3,7 +3,7 @@ import Tracks from "../Tracks";
 
 const Ind = () => {
   return (
-    <div>
+    <div className="row">
       <Tracks />
     </div>
   );

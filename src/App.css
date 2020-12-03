@@ -1,7 +1,17 @@
+
+form{
+  min-width: 40vw ;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 .homeview {
   display: block;
   display: inline-flex;
   margin-bottom: 0px;
+}
+.space{
+  margin-left:2rem ;
 }
 .the-para {
 
@@ -25,8 +35,6 @@
   margin-bottom: 0px;
   margin-top: 5rem;
  
-  padding-top: 0px;
-  padding-left: 0px;
 }
 .view{
   max-height: 100vh;
@@ -52,7 +60,7 @@
   display: inline-block;
   width: 40rem;
   align-content: center;
-  box-align: center;
+ 
   margin: 0%;
   margin-left: 0px;
   margin-right: 0px;
