@@ -2,6 +2,10 @@
 
 this aplication is only optimized for pc and some features doesn't work without googole chrome.
 
+## Live Preview link
+
+https://lyrics-finder-by-voice.netlify.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
