@@ -23,13 +23,13 @@ class HomeView extends Component {
       <div className="container-fluid view">
         <div className="row">
           <img
-            className="image col-md-6 col-sm-12 offset-3"
+            className="image col-md-12 col-sm-12"
             src={homeimage}
             alt="home"
           />
         </div>
         <div className="row">
-          <div className="the-para col-md-10 col-sm-12  ">
+          <div className="the-para    ">
             <h6>
               <p>
                 "One Good Thing About Music,When It Hits You, You Feel No Pain"
@@ -45,7 +45,7 @@ class HomeView extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="thesearch col-md-4 col-sm-12 offset-8">
+          <div className="thesearch col-md-12 col-sm-12 ">
             <h4 classNmae="">Search</h4>
             <i className="fas fa-music bounce" />
             <Link to="/search">
