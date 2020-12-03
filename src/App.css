@@ -4,39 +4,48 @@
   margin-bottom: 0px;
 }
 .the-para {
-  height: 200px;
-  width: 500px;
-  display: block;
+
   display: inline-flex;
-  margin-left: 390px;
-  margin-right: 150px;
-  margin-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  
   margin-top: 60px;
   text-align: center;
-  padding: 0px;
+ 
   font-family: "Barlow", sans-serif;
   color: rgb(11, 42, 100);
 }
 
 .image {
-  display: block;
+ 
   display: inline-flex;
-  margin: 360px;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
   margin-bottom: 0px;
-  margin-top: 0%;
-  margin-left: 330px;
+  margin-top: 5rem;
+ 
   padding-top: 0px;
   padding-left: 0px;
 }
+.view{
+  max-height: 100vh;
+ 
+}
 .thesearch {
-  position: relative;
-  left: 8%;
-  top: 130px;
-  margin-bottom: 0px;
-  display: inline-block;
+  margin-top: 4rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
   display: inline-flex;
+  justify-content: flex-end;
   color: rgb(48, 201, 212);
-  padding: 0px;
+  
+}
+.fa-music {
+  color: rgb(48, 201, 212);
+  font-size: 30px;
+  padding-left:.5rem;
+ 
 }
 
 .container {
@@ -63,6 +72,9 @@
 }
 .wrap {
   position: absolute;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
   top: 0;
 }
 .form-control-lg {
@@ -87,11 +99,7 @@
   animation: bounce 0.5s infinite linear;
   color: 000;
 }
-.fa-music {
-  color: rgb(48, 201, 212);
-  font-size: 30px;
-  margin: 0px;
-}
+
 @-webkit-keyframes bounce {
   0% {
     top: 0;

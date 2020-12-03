@@ -20,9 +20,11 @@ function App() {
 
             <Route exact path="/lyrics/track/:id" component={Lyrics} />
             <div>
-              <div className="container">
-                <Route exact path="/search" component={Navbar} />
-                <Route exact path="/search" component={Search} />
+              <div className="container row">
+                <div className="col-md-10 col-sm-12 offset-2">
+                  <Route exact path="/search" component={Navbar} />
+                  <Route exact path="/search" component={Search} />
+                </div>
               </div>
               <Route exact path="/search" component={Ind} />
             </div>

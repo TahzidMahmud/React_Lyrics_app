@@ -7,7 +7,7 @@ class Search extends Component {
     super();
     this.state = {
       trackTitle: "",
-      count: "true"
+      count: "true",
     };
   }
 
@@ -15,23 +15,19 @@ class Search extends Component {
     e.preventDefault();
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${
-          this.state.trackTitle
-        }&page_size=10&page=1&s_track_rating=desc&apikey=${
-          process.env.REACT_APP_MM_KEY
-        }`
+        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`
       )
-      .then(res => {
+      .then((res) => {
         dispatch({
           type: "SEARCH_TRACKS",
-          payload: res.data.message.body.track_list
+          payload: res.data.message.body.track_list,
         });
         this.setState({ trackTitle: "" }); //clear the field
       })
 
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
   counter = () => {
@@ -39,7 +35,7 @@ class Search extends Component {
   };
   //voice part//
 
-  listenSpeak = e => {
+  listenSpeak = (e) => {
     //set speeches to read out by the api
     const bash = window.bash;
 
@@ -50,7 +46,7 @@ class Search extends Component {
     recognition.continuous = false;
     recognition.interimResults = false;
 
-    if (this.state.count == "true") {
+    if (this.state.count === "true") {
       recognition.start();
       recognition.onstart = () => {
         const speech = new SpeechSynthesisUtterance();
@@ -58,15 +54,15 @@ class Search extends Component {
         speech.text = "listening"; //the real speech
         speech.lang = "en-IN";
         speech.volume = 1;
-        speech.rate = 1.5;
-        speech.pitch = 3;
+        speech.rate = 1;
+        speech.pitch = 0.9;
         //listen to the command and talk back
 
         window.speechSynthesis.speak(speech);
 
         this.setState({ count: "false" });
       };
-    } else if (this.state.count == "false") {
+    } else if (this.state.count === "false") {
       recognition.start();
       recognition.onstart = () => {
         const speech = new SpeechSynthesisUtterance();
@@ -74,8 +70,8 @@ class Search extends Component {
         speech.text = "searching"; //the real speech
         speech.lang = "en-IN";
         speech.volume = 1;
-        speech.rate = 1.5;
-        speech.pitch = 3;
+        speech.rate = 1;
+        speech.pitch = 0.9;
         //listen to the command and talk back
 
         window.speechSynthesis.speak(speech);
@@ -86,7 +82,7 @@ class Search extends Component {
     }
 
     //the event here holds the string we talked jus now !!
-    recognition.onresult = function(event) {
+    recognition.onresult = function (event) {
       //getting the result index
       const currentcommand = event.resultIndex;
       //accessing the voice string from the window
@@ -106,10 +102,11 @@ class Search extends Component {
       //initiating the synthesis
       const speech = new SpeechSynthesisUtterance();
       speech.lang = "en-IN";
-      speech.text = "you said" + command + "click again for search"; //the real speech
+      speech.text =
+        "you said" + command + "click again on the mic icon for search"; //the real speech
       speech.volume = 1;
       speech.rate = 1;
-      speech.pitch = 3;
+      speech.pitch = 0.9;
 
       //listen to the command and talk back
 
@@ -123,34 +120,36 @@ class Search extends Component {
   render() {
     return (
       <Consumer>
-        {value => {
+        {(value) => {
           const { dispatch } = value;
           return (
             <React.Fragment>
-              <div className="wrapper  ">
-                <form onSubmit={this.findTrack.bind(this, dispatch)}>
-                  <input
-                    className="form-control-lg  "
-                    placeholder="Enter Title To search"
-                    name="trackTitle"
-                    id="input"
-                    value={this.state.trackTitle}
-                    onChange={this.onChange}
-                  />
+              <div className="row">
+                <div className="wrapper ">
+                  <form onSubmit={this.findTrack.bind(this, dispatch)}>
+                    <input
+                      className="form-control-lg col-8 "
+                      placeholder="Enter Title To search"
+                      name="trackTitle"
+                      id="input"
+                      value={this.state.trackTitle}
+                      onChange={this.onChange}
+                    />
 
-                  <button
-                    onClick={this.findTrack.bind(this, dispatch)}
-                    className=" btn ml-3 mr-1  btn-small btn-radial btn-small btn-outline-info"
-                  >
-                    <i className="fas fa-search" />
-                  </button>
-                  <button
-                    onClick={this.counter.bind(this)}
-                    className=" btn m-1 btn-small btn-radial btn-small btn-outline-info "
-                  >
-                    <i className="fas fa-microphone" />
-                  </button>
-                </form>
+                    <button
+                      onClick={this.findTrack.bind(this, dispatch)}
+                      className=" btn ml-3 mr-1  btn-small btn-radial btn-small btn-outline-info"
+                    >
+                      <i className="fas fa-search" />
+                    </button>
+                    <button
+                      onClick={this.counter.bind(this)}
+                      className=" btn m-1 btn-small btn-radial btn-small btn-outline-info "
+                    >
+                      <i className="fas fa-microphone" />
+                    </button>
+                  </form>
+                </div>
               </div>
             </React.Fragment>
           );

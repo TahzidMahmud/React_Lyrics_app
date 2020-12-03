@@ -2,11 +2,11 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark mb-5">
-      <span className="navbar-brand mb-0 ml-0 mr-0 h1 mx-auto">
-        Lyrics Tracker
-      </span>
-    </nav>
+    <div className="row">
+      <nav className=" navbar-dark bg-dark mb-5 col-8">
+        <h1 className=" mb-0  text text-center text-white ">Lyrics Tracker</h1>
+      </nav>
+    </div>
   );
 };
 
