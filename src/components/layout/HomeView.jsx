@@ -12,7 +12,7 @@ class HomeView extends Component {
       " welcome to the app there is a voice typing  & search feature in the app you might wanna try "; //the real speech
     speech.volume = 1;
     speech.rate = 1;
-    speech.pitch = 3;
+    speech.pitch = 2;
     //listen to the command and talk back
 
     window.speechSynthesis.speak(speech);
