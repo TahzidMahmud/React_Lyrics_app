@@ -1,4 +1,4 @@
-## Opints to be noted 😋
+## Points to be noted 😋
 
 this aplication is only optimized for pc and some features doesn't work without googole chrome.
 
