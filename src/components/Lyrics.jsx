@@ -5,10 +5,18 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 class Lyrics extends Component {
-  state = {
-    track: {},
-    Lyrics: {},
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      track: {},
+      Lyrics: {},
+      count: 0,
+    };
+
+    // This binding is necessary to make `this` work in the callback
+    this.read_lyrics = this.read_lyrics.bind(this);
+  }
+
   componentDidMount() {
     axios
       .get(
@@ -22,8 +30,33 @@ class Lyrics extends Component {
       })
       .then((res) => {
         this.setState({ track: res.data.message.body.track });
+        this.speak();
       })
       .catch((err) => console.log(err));
+  }
+
+  speak() {
+    let speech = new SpeechSynthesisUtterance();
+
+    speech.text =
+      " Do you want me to read the lyrics for you ? ..then press the speaker icon "; //the real speech
+    speech.volume = 1;
+    speech.rate = 1;
+    speech.pitch = 0.9;
+    //listen to the command and talk back
+
+    window.speechSynthesis.speak(speech);
+  }
+  read_lyrics(e) {
+    let speech = new SpeechSynthesisUtterance();
+
+    speech.text = this.state.Lyrics.lyrics_body; //the real speech
+    speech.volume = 1;
+    speech.rate = 0.7;
+    speech.pitch = 0.9;
+    //listen to the command and talk back
+
+    window.speechSynthesis.speak(speech);
   }
   render() {
     const { track, Lyrics } = this.state;
@@ -46,10 +79,9 @@ class Lyrics extends Component {
           <div className="lyrics">
             <Link
               to="/search"
-              className=" btn mb-3 btn-small btn-radial btn-small btn-outline-info "
+              className=" btn mb-1 btn-small btn-radial btn-small btn-outline-info "
             >
               <i className="fas fa-chevron-left" />
-              ..Back..
             </Link>
             <div className="card">
               <h5 className="card-header">
@@ -72,6 +104,14 @@ class Lyrics extends Component {
                 <strong>Artist Name</strong>: {track.artist_name}
               </li>
             </ul>
+          </div>
+          <div className="d-flex justify-content-center ">
+            <div
+              onClick={this.read_lyrics}
+              className=" btn btn-lg btn-small btn-radial btn-small btn-outline-info m-4"
+            >
+              <i className="fas fa-volume-up"></i>
+            </div>
           </div>
         </React.Fragment>
       );
